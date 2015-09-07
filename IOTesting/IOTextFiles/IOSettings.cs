@@ -39,11 +39,15 @@ namespace IOTextFiles
 		{
 			try
 			{
-				string _temp = System.IO.File.ReadAllText(getPath());
+				string _temp = "",  _filepath = getPath();
+				if (System.IO.File.Exists(_filepath) )				//Проверка дали пътят е валиден
+				{
+				System.IO.File.ReadAllText(_filepath);
 				string [] _table = _temp.Replace("\r", "").Split('\n');
 				for (int i = 0; i < _table.Length; i++ )
 				{
 					_stable.stable[i] = _table[i];
+				}
 				}
 
 
