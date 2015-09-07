@@ -12,7 +12,7 @@ namespace IOTextFiles
 			IOSettings _io = new IOSettings (_STable);
 
 
-			if (_io.open()) {        // _io.save()){
+			if ( _io.save()){        //  _io.open())
 				Console.WriteLine("Таблицата е прочетена успешно");
 			}else{
 				Console.WriteLine("Таблицата Не е прочетена успешно");
