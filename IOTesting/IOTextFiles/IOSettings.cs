@@ -47,27 +47,38 @@ namespace IOTextFiles
 			try
 			{
 				iniSettings();
+
 				string _temp = "",  _filepath = getPath();
+
 				if (System.IO.File.Exists(_filepath) )				//Проверка дали пътят е валиден
 				{
 					System.IO.File.ReadAllText(_filepath);
+
 					string [] _table = _temp.Replace("\r", "").Split('\n');
+
 					for (int i = 0; i < _table.Length; i++ )
+						
 					{
 						_stable.stable[i] = _table[i];
 					}
+
 				}else 	{
 					
 					return false;
 				}
 
+				System.Diagnostics.Process.Start(_filepath);
 
 				return true;
 			}catch{
-				}
+			}
+
 			return false;
+
 		}
+
 		private void iniSettings ()
+
 		{
 			try{
 				bool _fileExist = System.IO.File.Exists (getPath ());
